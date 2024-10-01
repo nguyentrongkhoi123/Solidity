@@ -9,6 +9,7 @@ contract PriceOracle {
 
     constructor() {
         owner = msg.sender; // Người triển khai hợp đồng là chủ sở hữu
+        price = 0;
     }
 
     // Chỉ cho phép chủ sở hữu cập nhật giá
@@ -18,3 +19,6 @@ contract PriceOracle {
         emit PriceUpdated(price); // Phát sự kiện khi giá được cập nhật
     }
 }
+
+
+

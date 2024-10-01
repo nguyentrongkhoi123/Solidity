@@ -293,8 +293,8 @@
       ]
     },
     "C:\\Users\\Admin\\Desktop\\SourceCode\\workshop_S_chainlink\\contracts\\PriceOracle.sol": {
-      "lastModificationDate": 1727615057152,
-      "contentHash": "6bdfd7a185deb6b44b5f32c1fa381334",
+      "lastModificationDate": 1727712130434,
+      "contentHash": "c901e2b1c0b3f578deeade0b393f3dac",
       "sourceName": "contracts/PriceOracle.sol",
       "solcConfig": {
         "version": "0.8.0",

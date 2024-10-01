@@ -69,8 +69,18 @@ const account = process.env.ACCOUNT; // Địa chỉ ví của bạn từ biến
 const privateKey = process.env.PRIVATE_KEY; // Khóa riêng từ biến môi trường
 
 async function getLatestWIFUSDPrice() {
-    // Bạn có thể thay thế logic lấy giá thực tế từ nguồn dữ liệu ngoài
-    return Math.random() * 1000; // Trả về giá ngẫu nhiên cho ví dụ
+    try {
+        // Gửi yêu cầu tới CoinGecko API
+        const response = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=wif&vs_currencies=usd');
+        
+        // Lấy giá từ phản hồi
+        const price = response.data.wif.usd;
+
+        return price; // Trả về giá lấy được
+    } catch (error) {
+        console.error("Error fetching price:", error);
+        return 0; // Trả về 0 nếu có lỗi
+    }
 }
 
 async function updateOraclePrice(newPrice) {
